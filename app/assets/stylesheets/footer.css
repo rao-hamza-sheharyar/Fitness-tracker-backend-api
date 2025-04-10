@@ -1,0 +1,90 @@
+/****************************************************************
+*   Home Page Footer - without image
+****************************************************************/
+.home-footer-banner{
+    width: 100%;
+    min-height: 300px;
+    color: #fff;
+    background-color: rgba(0,15,117,.8);
+    text-align: center;
+    overflow: hidden;
+}
+
+.home-footer-section{
+    margin-top: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/****************************************************************
+*   Auth and Activity Page Footer - with image
+****************************************************************/
+.footer-banner{
+    width: 100%;
+    min-height: 400px;
+    color: #fff;
+    background-image: url('footer.png');
+    background-size: 100% 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.footer-section{
+    margin-top: 120px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+@media (max-width: 767px){
+    .footer-banner{
+        width: 100%;
+        min-height: 300px;
+        color: #fff;
+        background-image: none;
+        background-color: rgba(0,15,117,.8);
+        text-align: center;
+        overflow: hidden;
+        margin-top: 50px;
+    }
+    
+    
+    .footer-section{
+        margin-top: 50px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    } 
+}
+/****************************************************************
+*   General Footer Styles
+****************************************************************/
+.footer-link a{
+    color: #fff;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.footer-link a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-links a{
+    color: #fff;
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+.social-links a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-section h5 {
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.ft-author {
+    background-color: #dbe0ff;
+}

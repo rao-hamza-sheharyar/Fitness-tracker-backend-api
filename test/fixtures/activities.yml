@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  title: MyString
+  description: MyText
+  distance: MyString
+  duration: MyString
+  elevation: MyString
+  date: MyText
+  time: MyText
+  exertion: MyString
+  user: MyString
+
+two:
+  name: MyString
+  title: MyString
+  description: MyText
+  distance: MyString
+  duration: MyString
+  elevation: MyString
+  date: MyText
+  time: MyText
+  exertion: MyString
+  user: MyString

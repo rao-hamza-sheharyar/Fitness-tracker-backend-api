@@ -1,0 +1,11 @@
+.home_header{
+    text-align: center;
+    color:red;
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.bg {
+    background-image: url('bg.jpg') ;
+    background-size: 100% 100%;
+}
