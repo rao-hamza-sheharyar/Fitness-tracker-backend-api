@@ -12,6 +12,11 @@ class User < ApplicationRecord
     confirmed_at.present?
   end
 
+
+  def admin?
+    role == "admin"
+  end
+
   private
 
   def generate_confirmation_token

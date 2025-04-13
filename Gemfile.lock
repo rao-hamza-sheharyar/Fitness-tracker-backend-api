@@ -102,10 +102,6 @@ GEM
     jsonapi-renderer (0.2.2)
     jwt (2.10.1)
       base64
-    launchy (2.5.0)
-      addressable (~> 2.7)
-    letter_opener (1.10.0)
-      launchy (>= 2.2, < 4)
     loofah (2.6.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -132,6 +128,8 @@ GEM
     public_suffix (4.0.5)
     puma (4.3.5)
       nio4r (~> 2.0)
+    pundit (2.5.0)
+      activesupport (>= 3.0.0)
     rack (2.2.3)
     rack-cors (2.0.2)
       rack (>= 2.0.0)
@@ -243,9 +241,9 @@ DEPENDENCIES
   font-awesome-rails
   jbuilder (~> 2.7)
   jwt
-  letter_opener
   pg (~> 1.1.4)
   puma (~> 4.1)
+  pundit
   rack-cors
   rails (~> 6.0.3, >= 6.0.3.2)
   redis

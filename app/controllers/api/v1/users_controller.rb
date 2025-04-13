@@ -4,15 +4,20 @@ module Api::V1
     before_action :set_user, only: [:show, :update, :destroy]
 
     def index
-      users = User.all
+
+      authorize User
+      users = policy_scope(User)
+
       render json: users, each_serializer: ::UserSerializer
     end
 
     def show
+      authorize @user
       render json: @user, serializer: ::UserSerializer
     end
 
     def update
+      authorize @user
       if @user.update(user_params)
         render json: @user, serializer: ::UserSerializer
       else
@@ -21,6 +26,7 @@ module Api::V1
     end
 
     def destroy
+      authorize @user
       @user.destroy
       head :no_content
     end
