@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   # api  routes
   namespace :api do
     namespace :v1 do
+      post 'signup', to: 'registrations#create'
+      get 'verify_email', to: 'registrations#verify'
       post 'login', to: 'sessions#create'
       resources :users
     end
