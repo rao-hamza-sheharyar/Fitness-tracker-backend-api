@@ -5,22 +5,18 @@ Rails.application.routes.draw do
   # home page routes
   root "pages#home"
 
-  # after sign up and login
-  get '/users' => 'activitys#index', as: :user_root # creates user_root_path
-
-  # devise routes
-
-
-  # activities resources
-  resources :activitys
-
   # api  routes
   namespace :api do
     namespace :v1 do
+
+      resources :users
       post 'signup', to: 'registrations#create'
       get 'verify_email', to: 'registrations#verify'
       post 'login', to: 'sessions#create'
-      resources :users
+
+      resources :diet_plans, only: [:create, :show, :update, :destroy]
+      get 'users/:id/diet_plans', to: 'diet_plans#user_plans'
+
     end
   end
 end
