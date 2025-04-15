@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_04_10_170310) do
+ActiveRecord::Schema.define(version: 2025_04_13_141528) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -48,6 +48,31 @@ ActiveRecord::Schema.define(version: 2025_04_10_170310) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "diet_plans", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_diet_plans_on_user_id"
+  end
+
+  create_table "meal_items", force: :cascade do |t|
+    t.integer "meal_id", null: false
+    t.string "name"
+    t.integer "calories"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["meal_id"], name: "index_meal_items_on_meal_id"
+  end
+
+  create_table "meals", force: :cascade do |t|
+    t.integer "diet_plan_id", null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["diet_plan_id"], name: "index_meals_on_diet_plan_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "reset_password_token"
@@ -71,4 +96,7 @@ ActiveRecord::Schema.define(version: 2025_04_10_170310) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "diet_plans", "users"
+  add_foreign_key "meal_items", "meals"
+  add_foreign_key "meals", "diet_plans"
 end

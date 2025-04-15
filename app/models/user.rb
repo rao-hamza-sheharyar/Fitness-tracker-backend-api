@@ -3,6 +3,9 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }
 
   before_create :generate_confirmation_token
+  has_many :diet_plans, dependent: :destroy
+
+
 
   def confirm!
     update_columns(confirmed_at: Time.current, confirmation_token: nil)
